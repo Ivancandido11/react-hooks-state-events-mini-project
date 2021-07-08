@@ -1,7 +1,6 @@
-import React, { useState } from "react"
+import React from "react"
 
-function CategoryFilter({ category }) {
-  const [selected, setSelected] = useState("")
+function CategoryFilter({ category, setSelected, selected }) {
 
   const handleButtonClick = (element) => {
     setSelected(element)

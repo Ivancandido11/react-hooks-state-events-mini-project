@@ -9,7 +9,9 @@ console.log({ CATEGORIES, TASKS });
 
 function App() {
   const [taskList, setTaskList] = useState(TASKS)
-  const handleDeleteTask = (newList) => {
+  const [selected, setSelected] = useState("")
+  
+  const handleChangeTask = (newList) => {
     setTaskList(newList)
   }
 
@@ -18,11 +20,14 @@ function App() {
       <h2>My tasks</h2>
       <CategoryFilter
         category = {CATEGORIES}
+        setSelected = {setSelected}
+        selected = {selected}
       />
       <NewTaskForm />
       <TaskList 
         tasks = {taskList}
-        onDelete = {handleDeleteTask}
+        onChangeTask = {handleChangeTask}
+        selected = {selected}
       />
     </div>
   );
